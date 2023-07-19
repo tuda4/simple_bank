@@ -14,7 +14,7 @@ CREATE TABLE "entries" (
 );
 
 CREATE TABLE "tranfers" (
-  "id" bigint PRIMARY KEY,
+  "id" bigserial PRIMARY KEY,
   "from_account_id" bigint NOT NULL,
   "to_account_id" bigint NOT NULL,
   "amount" int NOT NULL,
