@@ -9,9 +9,10 @@ on:
 jobs:
 
   test:
+    name : test
     runs-on: ubuntu-latest
 
-      services:
+    services:
       postgres:
         image: postgres
         env:
