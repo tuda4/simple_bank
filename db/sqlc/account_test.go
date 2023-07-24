@@ -91,8 +91,8 @@ func TestGetListAccounts(t *testing.T) {
 	}
 
 	argList := ListAccountsParams{
-		Limit:  7,
-		Offset: 7,
+		Limit:  5,
+		Offset: 5,
 	}
 
 	accounts, err := testQueries.ListAccounts(context.Background(), argList)
