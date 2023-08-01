@@ -10,7 +10,7 @@ import (
 	"github.com/tuda4/simple_bank/util"
 )
 
-func createRandomAccount(t *testing.T) Accounts {
+func createRandomAccount(t *testing.T) Account {
 	arg := CreateAccountParams{
 		Owner:    util.RandOwner(),
 		Balance:  util.RandMoney(),

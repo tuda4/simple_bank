@@ -9,7 +9,7 @@ import (
 	"github.com/tuda4/simple_bank/util"
 )
 
-func createRandomEntry(t *testing.T, account Accounts) Entries {
+func createRandomEntry(t *testing.T, account Account) Entry {
 	arg := CreateEntryParams{
 		AccountID: account.ID,
 		Amount:    util.RandMoney(),
