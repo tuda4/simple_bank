@@ -10,7 +10,7 @@ import (
 	"github.com/tuda4/simple_bank/util"
 )
 
-func createRandomAccount(t *testing.T) Account {
+func createRandomAccount(t *testing.T) Accounts {
 	arg := CreateAccountParams{
 		Owner:    util.RandOwner(),
 		Balance:  util.RandMoney(),
@@ -91,8 +91,8 @@ func TestGetListAccounts(t *testing.T) {
 	}
 
 	argList := ListAccountsParams{
-		Limit:  5,
-		Offset: 5,
+		Limit:  7,
+		Offset: 7,
 	}
 
 	accounts, err := testQueries.ListAccounts(context.Background(), argList)
