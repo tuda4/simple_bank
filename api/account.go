@@ -37,7 +37,7 @@ func (server *Server) createAccount(ctx *gin.Context) {
 }
 
 type getAccountRequest struct {
-	ID int64 `uri:"id" binding:"required", min=1`
+	ID int64 `uri:"id" binding:"required,min=1"`
 }
 
 func (server *Server) getAccount(ctx *gin.Context) {
@@ -61,8 +61,8 @@ func (server *Server) getAccount(ctx *gin.Context) {
 }
 
 type listAccountRequest struct {
-	PageID   int32 `form:"page_id" binding:"required", min=1`
-	PageSize int32 `form:"page_size" binding:"required", min=5, max=10`
+	PageID   int32 `form:"page_id" binding:"required,min=1"`
+	PageSize int32 `form:"page_size" binding:"required,min=5,max=10"`
 }
 
 func (server *Server) listAccount(ctx *gin.Context) {
@@ -88,8 +88,8 @@ func (server *Server) listAccount(ctx *gin.Context) {
 }
 
 type updateAccountRequest struct {
-	ID      int64 `json:"id" binding:"required", min=1`
-	Balance int64 `json:"balance" binding:"required", min=0`
+	ID      int64 `json:"id" binding:"required,min=1"`
+	Balance int64 `json:"balance" binding:"required,min=0"`
 }
 
 func (server *Server) updateAccount(ctx *gin.Context) {
@@ -115,7 +115,7 @@ func (server *Server) updateAccount(ctx *gin.Context) {
 }
 
 type deleteAccountRequest struct {
-	ID int64 `uri:"id" binding:"required", min=1`
+	ID int64 `uri:"id" binding:"required,min=1"`
 }
 
 func (server *Server) deleteAccount(ctx *gin.Context) {
