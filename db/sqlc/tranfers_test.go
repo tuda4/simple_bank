@@ -9,11 +9,11 @@ import (
 	"github.com/tuda4/simple_bank/util"
 )
 
-func createRandomTransfer(t *testing.T, account1, account2 Accounts) Tranfers {
+func createRandomTransfer(t *testing.T, account1, account2 Account) Tranfer {
 	arg := CreateTransferParams{
 		FromAccountID: account1.ID,
 		ToAccountID:   account2.ID,
-		Amount:        int32(util.RandMoney()),
+		Amount:        util.RandMoney(),
 	}
 
 	transfer, err := testQueries.CreateTransfer(context.Background(), arg)
