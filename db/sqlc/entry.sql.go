@@ -69,7 +69,7 @@ func (q *Queries) ListEntries(ctx context.Context, arg ListEntriesParams) ([]Ent
 		return nil, err
 	}
 	defer rows.Close()
-	items := []Entries{}
+	var items []Entries
 	for rows.Next() {
 		var i Entries
 		if err := rows.Scan(
