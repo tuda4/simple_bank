@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-type Accounts struct {
+type Account struct {
 	ID        int64     `json:"id"`
 	Owner     string    `json:"owner"`
 	Balance   int64     `json:"balance"`
@@ -16,17 +16,26 @@ type Accounts struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
-type Entries struct {
+type Entry struct {
 	ID        int64     `json:"id"`
 	AccountID int64     `json:"account_id"`
 	Amount    int64     `json:"amount"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
-type Tranfers struct {
+type Tranfer struct {
 	ID            int64     `json:"id"`
 	FromAccountID int64     `json:"from_account_id"`
 	ToAccountID   int64     `json:"to_account_id"`
-	Amount        int32     `json:"amount"`
+	Amount        int64     `json:"amount"`
 	CreatedAt     time.Time `json:"created_at"`
+}
+
+type User struct {
+	Username          string    `json:"username"`
+	HashedPassword    string    `json:"hashed_password"`
+	FullName          string    `json:"full_name"`
+	Email             string    `json:"email"`
+	PasswordChangedAt time.Time `json:"password_changed_at"`
+	CreatedAt         time.Time `json:"created_at"`
 }
