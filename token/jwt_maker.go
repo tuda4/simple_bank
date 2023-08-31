@@ -12,7 +12,7 @@ type JWTMaker struct {
 	secretKey string
 }
 
-const secretKeySize = 48
+const secretKeySize = 32
 
 func (jwt JWTMaker) NewJWTMaker() (Maker, error) {
 	if len(jwt.secretKey) < secretKeySize {
