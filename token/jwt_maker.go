@@ -22,8 +22,7 @@ func (jwt JWTMaker) NewJWTMaker() (Maker, error) {
 	return &JWTMaker{jwt.secretKey}, nil
 }
 
-func (maker *JWTMaker) CreateToken(username string, duration time.Duration) (token string, err error) {
-	var payload *Payload
+func (maker *JWTMaker) CreateToken(username string, duration time.Duration) (token string, payload *Payload, err error) {
 	arg := PayloadParams{
 		username: username,
 		duration: duration,
