@@ -23,7 +23,6 @@ func (server *Server) createTransfer(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, errorResponse(err))
 		return
 	}
-	fmt.Print("create::", req.FromAccountID, req.ToAccountID)
 	if !server.validAccount(ctx, req.FromAccountID, req.Currency) {
 		return
 	}

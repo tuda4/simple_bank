@@ -29,7 +29,7 @@ sqlc:
 	sqlc generate
 
 server: 
-	go run main.go
+	air -c .air.toml
 
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/tuda4/simple_bank/db/sqlc Store
